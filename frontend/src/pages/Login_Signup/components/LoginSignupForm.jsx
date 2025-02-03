@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { setUser } from "../../../redux/features/user/userSlice.js";
+import { setUser } from "../../../../redux/features/user/userSlice.js";
 
 const LoginSignupForm = ({ page }) => {
   const [formData, setFormData] = useState({

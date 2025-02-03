@@ -1,10 +1,6 @@
 import React from "react";
-// import corouselBg from "../../assets/corousel-bg.svg";
-// import images from "../../constants/sliderImages.js";
-// import CarouselSlider from "../../components/carouselSlider.jsx";
-// import logo from "../../assets/Chat_Application-logo.png";
 import yoga1 from "../../assets/yoga1.png";
-import LoginSignupForm from "../components/LoginSignupForm";
+import LoginSignupForm from "./components/LoginSignupForm";
 import { useLocation } from "react-router-dom";
 
 const LoginSignupPage = () => {
@@ -15,11 +11,6 @@ const LoginSignupPage = () => {
     <div className="flex items-center justify-center h-full w-full relative">
       <div
         className={`w-full h-full bg-[#e4dfbe] hidden md:block`}
-        style={{
-          // backgroundImage: `url(${corouselBg})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center bottom",
-        }}
       >
         <div className="flex h-full justify-center items-center">
           <img className="w-[85%]" src={yoga1} alt="" />

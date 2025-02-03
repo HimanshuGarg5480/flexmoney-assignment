@@ -3,24 +3,22 @@ import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer } from "react-toastify";
 import { Routes, Route } from "react-router-dom";
 import LoginSignupPage from "./pages/Login_Signup/LoginSignupPage";
-// import Profile from "./components/Profile";
-// import ProtectedRoute from "./components/ProtectedRoute";
-// import ChatPage from "./pages/Chat/ChatPage";
+import ProtectedRoute from "./components/ProtectedRoute";
+import Home from "./pages/Home/Home";
 const App = () => {
   return (
     <div className="h-screen">
       <Routes>
         <Route path="/login" element={<LoginSignupPage />} />
         <Route path="/signup" element={<LoginSignupPage />} />
-        {/* <Route path="/profile" element={<Profile />} />
         <Route
           path="/"
           element={
             <ProtectedRoute>
-              <ChatPage />
+              <Home />
             </ProtectedRoute>
           }
-        /> */}
+        />
       </Routes>
       <ToastContainer />
     </div>
