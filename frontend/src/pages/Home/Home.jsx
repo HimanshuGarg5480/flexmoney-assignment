@@ -50,7 +50,7 @@ const Home = () => {
 
       {/* Footer Section */}
       <footer className="text-center text-xs text-gray-700 mt-16 py-6 bg-yellow-100">
-        © github repository - https://github.com/HimanshuGarg5480/flexmoney-assignment
+        github repository - https://github.com/HimanshuGarg5480/flexmoney-assignment
       </footer>
     </div>
   );

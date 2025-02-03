@@ -24,7 +24,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-[#F0B100] px-3 py-2 shadow-md">
+    <nav className="absolute w-full bg-[#F0B100] px-3 py-2 shadow-md">
       <div className="container mx-auto flex justify-between items-center">
         <Link to="/" className="text-slate-600 text-xl font-bold">
           Yoga class assignment

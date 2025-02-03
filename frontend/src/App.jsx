@@ -7,10 +7,11 @@ import ProtectedRoute from "./components/ProtectedRoute";
 import Home from "./pages/Home/Home";
 
 import Navbar from "./pages/Home/components/Navbar";
+import Profile from "./pages/Profile/Profile";
 
 const ProtectedLayout = () => {
   return (
-    <div className="h-screen bg-[#efebd5]">
+    <div className="h-screen relative bg-[#efebd5]">
       <Navbar />
       <Outlet /> {/* This renders the nested child routes */}
     </div>
@@ -36,7 +37,7 @@ const App = () => {
         >
           <Route index element={<Home />} />
           {/* <Route path="dashboard" element={<Dashboard />} /> */}
-          {/* <Route path="profile" element={<Profile />} /> */}
+          <Route path="profile" element={<Profile />} />
         </Route>
       </Routes>
       <ToastContainer />
