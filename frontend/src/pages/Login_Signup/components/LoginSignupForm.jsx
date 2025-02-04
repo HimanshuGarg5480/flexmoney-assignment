@@ -18,13 +18,11 @@ const LoginSignupForm = ({ page }) => {
   const dispatch = useDispatch();
 
   const handleChange = (e) => {
-    console.log("hi");
     setFormData({ ...formData, [e.target.id]: e.target.value });
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(formData);
     if (page === "signup" && formData.password !== formData.confirmPassword) {
       setError("Passwords do not match");
       return;

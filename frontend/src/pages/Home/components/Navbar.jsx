@@ -1,18 +1,21 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { notifyError, notifySuccess } from "../../../utils/toasts";
+import { useDispatch } from "react-redux";
+import { clearUser } from "../../../../redux/features/user/userSlice";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const dispatch = useDispatch();
   const navigate = useNavigate();
   const toggleMenu = () => setIsOpen(!isOpen);
   const handleLogout = async () => {
-    console.log("Logout clicked");
     try {
       const response = await fetch("/server/api/user/logout", {
         method: "POST",
       });
       if (response.ok) {
+        dispatch(clearUser());
         notifySuccess("logged out successfuly");
         navigate("/login");
       }
@@ -58,14 +61,6 @@ const Navbar = () => {
               className="block md:hover:bg-transparent md:hover:underline text-center"
             >
               Enroll now
-            </Link>
-          </li>
-          <li>
-            <Link
-              to="/enroll"
-              className="block md:hover:bg-transparent md:hover:underline text-center"
-            >
-              your payments
             </Link>
           </li>
           <li>

@@ -2,10 +2,15 @@ import React from "react";
 import CarouselSlider from "../../components/CarouselSlider";
 import yoga1 from "../../assets/yoga1.png";
 import yoga2 from "../../assets/yoga2.png";
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
   const images = [yoga1, yoga2];
-
+  const navigate = useNavigate();
+  const handleEnroll = (e)=>{
+    e.preventDefault();
+    navigate('/enroll');
+  }
   return (
     <div className="bg-gradient-to-b from-yellow-50 to-white min-h-screen">
       {/* Hero Section */}
@@ -23,7 +28,9 @@ const Home = () => {
           <p className="text-lg text-gray-700">
             Join our professional yoga classes to improve flexibility, reduce stress, and enhance well-being.
           </p>
-          <button className="bg-yellow-500 hover:bg-yellow-600 cursor-pointer text-white px-6 py-3 rounded-lg text-lg shadow-md transition-all duration-300 transform hover:scale-105">
+          <button className="bg-yellow-500 hover:bg-yellow-600 cursor-pointer text-white px-6 py-3 rounded-lg text-lg shadow-md transition-all duration-300 transform hover:scale-105"
+                  onClick={handleEnroll}
+          >
             Enroll Now
           </button>
         </div>

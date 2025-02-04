@@ -61,6 +61,19 @@ export const getUserEnrollments = async (req, res) => {
   }
 };
 
+export const getUserCurrentEnrollment = async (req,res)=>{
+  try {
+    const userId= req.user.id;
+    const {month} = req.params;    
+    const enrollmentDetails = await Enrollment.findOne({userId,month}).populate("batchId")
+    .populate("paymentId");
+    res.status(200).json(enrollmentDetails);
+  } catch (error) {
+    console.log("error",error);
+    res.status(500).json({message:"server error"});
+  }
+}
+
 export const getAllEnrollments = async (req, res) => {
   try {
     const enrollments = await Enrollment.find()

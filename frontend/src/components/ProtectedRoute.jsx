@@ -2,13 +2,25 @@
 import React, { useEffect, useState } from "react";
 import { Navigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { setUser } from "../../redux/features/user/userSlice.js";
+import { setEnrollmentDetails, setUser } from "../../redux/features/user/userSlice.js";
 
 const ProtectedRoute = ({ children }) => {
   const [isAuthenticated, setIsAuthenticated] = useState(null);
   const dispatch = useDispatch();
 
   useEffect(() => {
+
+    const fetchEnrollmentDetails = async () =>{
+      try {
+        const date  = new Date();
+        const month = date.getMonth()+1;
+        const response = await fetch(`/server/api/enroll/${month}/month`);
+        const data = await response.json();
+        dispatch(setEnrollmentDetails(data));
+      } catch (error) {
+        console.log("error",error);
+      }
+    }
     const checkAuth = async () => {
       try {
         const response = await fetch("/server/api/user/authcheck");
@@ -16,6 +28,7 @@ const ProtectedRoute = ({ children }) => {
         if (data.authenticated) {
           setIsAuthenticated(data.authenticated);
           dispatch(setUser(data));
+          fetchEnrollmentDetails();
         } else {
           setIsAuthenticated(false);
         }

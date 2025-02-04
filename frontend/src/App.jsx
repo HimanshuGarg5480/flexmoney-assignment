@@ -4,10 +4,11 @@ import { ToastContainer } from "react-toastify";
 import { Routes, Route, Outlet } from "react-router-dom";
 import LoginSignupPage from "./pages/Login_Signup/LoginSignupPage";
 import ProtectedRoute from "./components/ProtectedRoute";
-import Home from "./pages/Home/Home";
+import Home from "./pages/Home/Home.jsx";
 
-import Navbar from "./pages/Home/components/Navbar";
-import Profile from "./pages/Profile/Profile";
+import Navbar from "./pages/Home/components/Navbar.jsx";
+import Profile from "./pages/Profile/Profile.jsx";
+import Enroll from "./pages/Enroll/Enroll.jsx";
 
 const ProtectedLayout = () => {
   return (
@@ -37,6 +38,7 @@ const App = () => {
         >
           <Route index element={<Home />} />
           {/* <Route path="dashboard" element={<Dashboard />} /> */}
+          <Route path="enroll" element={<Enroll />} />
           <Route path="profile" element={<Profile />} />
         </Route>
       </Routes>
