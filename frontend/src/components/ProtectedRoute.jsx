@@ -14,7 +14,7 @@ const ProtectedRoute = ({ children }) => {
       try {
         const date  = new Date();
         const month = date.getMonth()+1;
-        const response = await fetch(`https://flexmoney-assignment-a3zx.onrender.com/api/enroll/${month}/month`);
+        const response = await fetch(`/server/api/enroll/${month}/month`);
         const data = await response.json();
         dispatch(setEnrollmentDetails(data));
       } catch (error) {
@@ -23,7 +23,7 @@ const ProtectedRoute = ({ children }) => {
     }
     const checkAuth = async () => {
       try {
-        const response = await fetch("https://flexmoney-assignment-a3zx.onrender.com/api/user/authcheck");
+        const response = await fetch("/server/api/user/authcheck");
         const data = await response.json();
         if (data.authenticated) {
           setIsAuthenticated(data.authenticated);

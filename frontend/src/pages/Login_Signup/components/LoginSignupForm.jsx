@@ -30,7 +30,7 @@ const LoginSignupForm = ({ page }) => {
 
     try {
       setLoading(true);
-      const response = await fetch(`https://flexmoney-assignment-a3zx.onrender.com/api/user/${page}`, {
+      const response = await fetch(`/server/api/user/${page}`, {
         method: "POST", // HTTP method
         headers: {
           "Content-Type": "application/json", // Specify content type

@@ -11,7 +11,7 @@ const Navbar = () => {
   const toggleMenu = () => setIsOpen(!isOpen);
   const handleLogout = async () => {
     try {
-      const response = await fetch("https://flexmoney-assignment-a3zx.onrender.com/api/user/logout", {
+      const response = await fetch("/server/api/user/logout", {
         method: "POST",
       });
       if (response.ok) {

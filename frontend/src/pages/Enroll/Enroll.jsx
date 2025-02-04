@@ -84,7 +84,7 @@ const EnrollForm = ({ batches, selectedBatch, closeForm, isFormVisible }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response1 = await fetch("https://flexmoney-assignment-a3zx.onrender.com/api/payment/", {
+      const response1 = await fetch("/server/api/payment/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -110,7 +110,7 @@ const EnrollForm = ({ batches, selectedBatch, closeForm, isFormVisible }) => {
       };
 
 
-      const response2 = await fetch("https://flexmoney-assignment-a3zx.onrender.com/api/enroll/", {
+      const response2 = await fetch("/server/api/enroll/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -272,7 +272,7 @@ const EnrollPage = () => {
   useEffect(() => {
     const fetchBatches = async () => {
       try {
-        const response = await fetch("https://flexmoney-assignment-a3zx.onrender.com/api/batch/");
+        const response = await fetch("/server/api/batch/");
         const data = await response.json();
         setBatches(data);
       } catch (error) {

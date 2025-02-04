@@ -8,7 +8,7 @@ export default defineConfig({
   server: {
     proxy: {
       "/server": {
-        target: "https://flexmoney-assignment-a3zx.onrender.com",
+        target: "http://localhost:8000",
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/server/, ""),
       },
